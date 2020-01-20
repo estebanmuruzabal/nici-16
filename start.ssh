@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo 'starting frontend';
+
+nvm use v10.13.0;
+npm run dev;

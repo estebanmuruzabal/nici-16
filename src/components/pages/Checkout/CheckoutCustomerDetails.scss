@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+
+.checkout-customer-details__item {
+
+    &:not(:first-child) {
+        margin-top: 15px;
+    }
+}
+
+.checkout-customer-details__actions {
+    margin-top: 10px;
+    display: flex;
+}
+
+.checkout-customer-details__edit, {
+    width: 190px;
+}

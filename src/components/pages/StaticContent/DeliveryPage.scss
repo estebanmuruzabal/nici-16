@@ -1,0 +1,40 @@
+@import '../../../styles/mixins/breakpoints';
+@import '../../../styles/variables.scss';
+
+.stores-page {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.stores-page__content {
+    margin-top: 30px;
+}
+
+.stores-page__block {
+
+    &:not(:last-child) {
+        padding-bottom: 30px;
+    }
+
+    &:not(:first-child) {
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+    }
+
+    p {
+        margin-top: 15px;
+        line-height: 32px;
+        font-family: $font-family-body;
+        font-size: $font-size-small;
+        color: $color-body;
+    }
+
+    ul {
+        font-family: $font-family-body;
+        font-size: $font-size-small;
+        color: $color-body;
+        list-style: initial;
+        margin: 10px;
+        padding: 0 10px 10px 10px;
+    }
+}
