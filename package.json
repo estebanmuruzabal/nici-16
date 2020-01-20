@@ -22,7 +22,7 @@
     "async": "2.6.1",
     "cookie": "0.3.1",
     "cookie-parser": "1.4.3",
-    "debug": "2.2.0",
+    "debug": "4.1.1",
     "express": "4.16.4",
     "express-static-gzip": "0.3.2",
     "flux": "3.1.3",
