@@ -22,7 +22,7 @@
     "async": "2.6.1",
     "cookie": "0.3.1",
     "cookie-parser": "1.4.3",
-    "debug": "2.2.0",
+    "debug": ">=2.6.9",
     "express": "4.16.4",
     "express-static-gzip": "0.3.2",
     "flux": "3.1.3",
@@ -31,7 +31,7 @@
     "intl": "1.2.5",
     "intl-locales-supported": "1.0.0",
     "keymirror": "0.1.1",
-    "marked": "0.6.0",
+    "marked": ">=0.6.1",
     "moment": "2.22.1",
     "prop-types": "15.6.1",
     "query-string": "5.1.1",
@@ -42,7 +42,7 @@
     "react-router": "4.4.0-beta.6",
     "react-router-config": "4.4.0-beta.6",
     "react-router-dom": "4.4.0-beta.6",
-    "serialize-javascript": "1.4.0",
+    "serialize-javascript": ">=2.1.1",
     "superagent": "3.8.2"
   },
   "devDependencies": {
