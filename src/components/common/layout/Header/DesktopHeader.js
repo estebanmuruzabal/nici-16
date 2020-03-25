@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Flux
+import IntlStore from '../../../../stores/Application/IntlStore';
+import ContentsListStore from '../../../../stores/Contents/ContentsListStore';
 import AccountStore from '../../../../stores/Account/AccountStore';
 import CartStore from '../../../../stores/Cart/CartStore';
 import DrawerStore from '../../../../stores/Application/DrawerStore';
@@ -18,6 +20,7 @@ import Badge from '../../indicators/Badge';
 import CollectionTreeMenu from '../../navigation/CollectionTreeMenu';
 import MainNavigation from '../../navigation/MainNavigation';
 import Text from '../../typography/Text';
+import LogoDisplayer from '../../../common/images/LogoDisplayer';
 
 /**
  * Component
@@ -36,6 +39,7 @@ class DesktopHeader extends React.Component {
         cartTotalItems: this.context.getStore(CartStore).getTotalItems(),
         user: this.context.getStore(AccountStore).getAccountDetails(),
         openedDrawer: this.context.getStore(DrawerStore).getOpenedDrawer(),
+        headerDesktopLogo: this.context.getStore(ContentsListStore).getOrderedContentsOfType('headerDesktopLogo', [], true),
         collectionsTreeMenuEnabled: false
     };
 
@@ -50,7 +54,8 @@ class DesktopHeader extends React.Component {
         this.setState({
             cartTotalItems: nextProps._cartTotalItems,
             user: nextProps._user,
-            openedDrawer: nextProps._openedDrawer
+            openedDrawer: nextProps._openedDrawer,
+            headerDesktopLogo: nextProps._headerDesktopLogo,
         });
     }
 
@@ -63,17 +68,17 @@ class DesktopHeader extends React.Component {
     //*** Template ***//
 
     render() {
-
+        // Helper variables
+        const locale = this.context.getStore(IntlStore).getCurrentLocale();
+        const routeParams = {locale: locale};
+        const isAdmin = this.context.getStore(AccountStore).isAuthorized(['admin']);
         // Return
         return (
             <div className="desktop-header">
                 <div className="desktop-header__container">
                     <div className="desktop-header__row">
                         <div className="desktop-header__container-left-column">
-                            <Link className="desktop-header__logo-link" to={`/${this.context.intl.locale}`}>
-                                <div className="desktop-header__logo">
-                                </div>
-                            </Link>
+                            <LogoDisplayer logo={this.state.headerDesktopLogo} locale={locale} />
                             <div className="desktop-header__navigation">
                                 <MainNavigation links={this.props.collections} />
                             </div>
@@ -81,6 +86,17 @@ class DesktopHeader extends React.Component {
                         <div className="desktop-header__container-right-column">
                             {this.state.user ?
                                 <div className="desktop-header__account">
+                                    { isAdmin ?
+                                        <div className="desktop-header__logout-button">
+                                            <Link to={`/${this.context.intl.locale}/adm`} params={routeParams}>
+                                                <Text size="small" weight="bold" color="white">
+                                                    <FormattedMessage id="adminPanel" />
+                                                </Text>
+                                            </Link>
+                                        </div>
+                                        :
+                                        null
+                                    }
                                     <div className="desktop-header__logout-button">
                                         <Link to={`/${this.context.intl.locale}/logout`}>
                                             <Text size="small">
@@ -147,6 +163,7 @@ DesktopHeader = connectToStores(DesktopHeader, [AccountStore, CartStore, DrawerS
         _cartTotalItems: context.getStore(CartStore).getTotalItems(),
         _user: context.getStore(AccountStore).getAccountDetails(),
         _openedDrawer: context.getStore(DrawerStore).getOpenedDrawer(),
+        _headerDesktopLogo: context.getStore(ContentsListStore).getOrderedContentsOfType('headerDesktopLogo', ['homepage'], true),
     };
 });
 

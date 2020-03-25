@@ -56,10 +56,12 @@ class AdminProductsEdit extends React.Component {
 
     componentDidMount() {
         const { product, availableLocales } = this.state;
-        availableLocales.map(locale => {
-            product.name[locale] = '';
-        });
-        this.setState({product});
+        if (product) {
+            availableLocales.map(locale => {
+                product.name[locale] = '';
+            });
+            this.setState({product});   
+        }
         // Component styles
         require('./AdminProductsEdit.scss');
 
@@ -74,7 +76,8 @@ class AdminProductsEdit extends React.Component {
         const { availableLocales } = this.state;
         if (nextProps._error && nextProps._error.validation && nextProps._error.validation.keys) {
             nextProps._error.validation.keys.forEach(function (field) {
-                if (field === 'description') {
+                if (field.includes('description')) {
+                    console.log('field:', field);
                     availableLocales.map(locale => {
                         fieldErrors[`description.${locale}`] = nextProps._error.validation.details[field];
                     });
@@ -344,9 +347,9 @@ class AdminProductsEdit extends React.Component {
                                               checked={this.state.product.tags && this.state.product.tags.indexOf('homepage') !== -1} />
                                 </InlineItems>
                             </div>
-                            {   availableLocales.map((locale) => {
+                            {   availableLocales.map((locale, idx) => {
                                 return (
-                                    <div className="admin-products-edit__form-item">
+                                    <div key={locale + idx + 1} className="admin-products-edit__form-item">
                                         <InputField label={intl.formatMessage({id: 'name'}) + ` (${locale.toUpperCase()})`}   
                                                     onChange={this.handleNameChange.bind(null, `${locale}`)}
                                                     value={this.state.product.name[locale]}
@@ -354,9 +357,9 @@ class AdminProductsEdit extends React.Component {
                                     </div>
                                 );
                             })}
-                            {   availableLocales.map((locale) => {
+                            {   availableLocales.map((locale, idx) => {
                                 return (
-                                    <div className="admin-products-edit__form-item">
+                                    <div key={locale + idx} className="admin-products-edit__form-item">
                                         <Textarea label={intl.formatMessage({id: 'description'}) + ` (${locale.toUpperCase()})`}   
                                                 rows="5"
                                                 onChange={this.handleIntlFieldChange.bind(null, 'description', `${locale}`)}

@@ -63,11 +63,12 @@ class AdminCollectionsEdit extends React.Component {
     //*** Component Lifecycle ***//
 
     componentDidMount() {
-        const { colection, availableLocales } = this.state;
+        const { collection, availableLocales } = this.state;
+        
         availableLocales.map(locale => {
-            colection.name[locale] = '';
+            collection.name[locale] = '';
         });
-        this.setState({colection});
+        this.setState({collection});
         // Component styles
         require('./AdminCollectionsEdit.scss');
     }
@@ -269,9 +270,9 @@ class AdminCollectionsEdit extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            {   availableLocales.map((locale) => {
+                            {   availableLocales.map((locale, idx) => {
                                 return (
-                                    <div className="admin-collection-edit__form-item">
+                                    <div key={idx + 1} className="admin-collection-edit__form-item">
                                         <InputField label={intl.formatMessage({id: 'name'}) + ` (${locale.toUpperCase()})`}   
                                                     onChange={this.handleNameChange.bind(null, `${locale}`)}
                                                     value={this.state.collection.name[locale]}
@@ -279,9 +280,9 @@ class AdminCollectionsEdit extends React.Component {
                                     </div>
                                 );
                             })}
-                            {   availableLocales.map((locale) => {
+                            {   availableLocales.map((locale, idx) => {
                                 return (
-                                    <div className="admin-collection-edit__form-item">
+                                    <div key={idx - 1} className="admin-collection-edit__form-item">
                                         <Textarea label={intl.formatMessage({id: 'description'}) + ` (${locale.toUpperCase()})`}   
                                             rows="5"
                                             onChange={this.handleIntlFieldChange.bind(null, 'description', `${locale}`)}

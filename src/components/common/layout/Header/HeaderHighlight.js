@@ -4,7 +4,7 @@
 import React from 'react';
 import { FormattedMessage, FormattedNumber, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
-
+import config from '../../../../config';
 // Flux
 import IntlStore from '../../../../stores/Application/IntlStore';
 
@@ -44,7 +44,7 @@ class HeaderHighlight extends React.Component {
                         &nbsp;
                         <FormattedNumber value="19.90"
                                          style="currency"
-                                         currency="EUR" />
+                                         currency={config.app.currency} />
                     </Text>
                 </div>
             </div>

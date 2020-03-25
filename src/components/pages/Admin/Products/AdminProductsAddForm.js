@@ -5,6 +5,9 @@ import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 
+// store imports
+import IntlStore from '../../../../stores/Application/IntlStore';
+
 // Required components
 import Button from '../../../common/buttons/Button';
 import InputField from '../../../common/forms/InputField';
@@ -39,7 +42,8 @@ class AdminProductsAddForm extends React.Component {
         availableLocales.map(locale => {
             name[locale] = '';
         });
-        this.setState({name});
+        
+        this.setState({name, sku: this.props.lastSKU.toString()});
         // Component styles
         require('./AdminProductsAddForm.scss');
     }
@@ -66,7 +70,7 @@ class AdminProductsAddForm extends React.Component {
             fieldErrors.sku = intl.formatMessage({id: 'fieldRequired'});
         }
         availableLocales.map(locale => {
-            if (!this.state.collection.name[locale]) {
+            if (!this.state.name[locale]) {
                 fieldErrors['name.' + locale] = intl.formatMessage({id: 'fieldRequired'});
             }  
         })
@@ -102,11 +106,12 @@ class AdminProductsAddForm extends React.Component {
                 <div className="admin-products-add-form__item">
                     <InputField label={intl.formatMessage({id: 'skuHeading'})}
                                 onChange={this.handleSKUChange}
+                                value={this.state.sku}
                                 error={fieldError('sku')} />
                 </div>
                 {   availableLocales.map((locale) => {
                     return (
-                        <div className="admin-products-add-form__item">
+                        <div key={locale} className="admin-products-add-form__item">
                             <InputField label={intl.formatMessage({id: 'name'}) + ` (${locale.toUpperCase()})`}   
                                         onChange={this.handleNameChange.bind(null, `${locale}`)}
                                         error={fieldError(`name.${locale}`)} />

@@ -174,7 +174,13 @@ class AdminContentsEdit extends React.Component {
                                               selectedLocale={this.state.selectedLocale}
                                               onChange={this.handleBodyChange} />
                     );
-                } else if(this.state.content.type === 'banner') {
+                } else if (this.state.content.type === 'banner') {
+                    return (
+                        <AdminContentsBanner body={this.state.content.body}
+                                             selectedLocale={this.state.selectedLocale}
+                                             onChange={this.handleBodyChange} />
+                    );
+                } else if (this.state.content.type === 'headerDesktopLogo') {
                     return (
                         <AdminContentsBanner body={this.state.content.body}
                                              selectedLocale={this.state.selectedLocale}
@@ -254,9 +260,6 @@ class AdminContentsEdit extends React.Component {
                                             <Checkbox label={intl.formatMessage({id: 'homepageCheckbox'})}
                                                       onChange={this.handleSectionChange.bind(null, 'homepage')}
                                                       checked={this.state.content.tags && this.state.content.tags.indexOf('homepage') !== -1} />
-                                            <Checkbox label={intl.formatMessage({id: 'productPageCheckbox'})}
-                                                      onChange={this.handleSectionChange.bind(null, 'productPage')}
-                                                      checked={this.state.content.tags && this.state.content.tags.indexOf('productPage') !== -1} />
                                         </div>
                                     </div>
                                 </div>

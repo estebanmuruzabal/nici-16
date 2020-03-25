@@ -291,6 +291,7 @@ class ProductPage extends React.Component {
                                     <div className="product-page__add-buttons">
                                         {this.state.product.stock > 0 ?
                                             <Button type="primary"
+                                                    fontSize="small"
                                                     onClick={this.handleAddToCartClick}
                                                     disabled={this.state.quantity <= 0 || this.state.cartLoading}>
                                                 <FormattedMessage id="addToCart"/>

@@ -1,8 +1,10 @@
+@import '../../../../styles/variables.scss';
+
 .header-highlight {
     display: flex;
     justify-content: center;
     padding: 7.5px 0;
-    background-color: #eee;
+    background-color: $homepage_envios_gratis_top_banner_background_color;
 }
 
 .header-highlight__shipping-icon {

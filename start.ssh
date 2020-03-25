@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 echo 'starting frontend';
 
 nvm use v10.13.0;

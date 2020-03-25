@@ -44,7 +44,7 @@ class ProductList extends React.Component {
 
         return (
             <div className="product-list">
-                {this.props.filters ?
+                {/* {this.props.filters ?
                     <div className="product-list__sidebar">
                         {this.props.filters.map((item, idx) => {
                             let links = item.collections.map((col) => {
@@ -67,7 +67,7 @@ class ProductList extends React.Component {
                     </div>
                     :
                     null
-                }
+                } */}
 
                 <div className="product-list__container">
                     {this.props.title ?

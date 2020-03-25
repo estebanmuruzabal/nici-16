@@ -10,7 +10,7 @@ module.exports = {
             es: 'Simple Store',
         },
         locale: {
-            available: ['es','en'],
+            available: ['es'],
             default: 'es'
         }
     },

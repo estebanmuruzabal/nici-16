@@ -10,9 +10,10 @@ module.exports = {
             es: 'Simple Store',
         },
         locale: {
-            available: ['es','en'],
-            default: 'en'
-        }
+            available: ['es'],
+            default: 'es'
+        },
+        currency: 'ARS'
     },
     api: {
         atlas: {

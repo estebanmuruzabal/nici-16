@@ -31,7 +31,7 @@ class ImageLibrary extends React.Component {
     //*** View Controllers ***//
 
     handleViewURLClick = (idx) => {
-        alert(this.props.images[idx].url);
+        alert(`${this.props.images[idx].url}`);
     };
 
     handleRemoveClick = (idx) => {

@@ -114,9 +114,9 @@ class AdminCollectionsAddForm extends React.Component {
                             onChange={this.handleTypeChange}
                             error={fieldError('type')} />
                 </div>
-                {   availableLocales.map((locale) => {
+                {   availableLocales.map((locale, idx) => {
                     return (
-                        <div className="admin-collections-add-form__item">
+                        <div key={idx} className="admin-collections-add-form__item">
                             <InputField label={intl.formatMessage({id: 'name'}) + `(${locale.toUpperCase()})`}   
                                         onChange={this.handleNameChange.bind(null, `${locale}`)}
                                         error={fieldError(`name${locale}`)} />

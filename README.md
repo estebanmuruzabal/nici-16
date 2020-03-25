@@ -58,3 +58,8 @@ In order to perform administrative tasks like adding and editing products or che
   `config/client/development.js`
   `src/actions/Checkout/createCheckout.js`
   `src/client.js`
+
+  ### Adding a content type:
+  - Add the tyoe of content to the backend model `src/resources/contents/models.js`
+  - Add it to the `AdminContentAddForm.js` and `AdminContentsEdit.js`
+  - Add the type name in `es.js` and `en.js`

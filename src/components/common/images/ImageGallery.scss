@@ -13,8 +13,8 @@
     width: 100%;
 
     @include breakpoint(wide-screens) {
-        width: 400px;
-        height: 400px;
+        // width: 400px;
+        // height: 400px;
     }
 
     img {

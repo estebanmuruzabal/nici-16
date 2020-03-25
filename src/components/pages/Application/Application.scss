@@ -14,7 +14,7 @@
 
 .application__admin-warning {
     padding: 20px;
-    background-color: yellow;
+    background-color: darkcyan;
     text-align: center;
 }
 
@@ -43,6 +43,7 @@
 }
 
 .application__container-wrapper {
+    background-color: $homepage_body_background_color;
     display: flex;
     flex-grow: 1;
     justify-content: center;

@@ -116,7 +116,6 @@ class AdminProducts extends React.Component {
 
         let intl = this.context.intl;
         let locale = intl.locale;
-
         let uploadModal = () => {
             if (this.state.showUploadModal) {
                 return (
@@ -131,10 +130,13 @@ class AdminProducts extends React.Component {
 
         let newProductModal = () => {
             if (this.state.showNewProductModal) {
+                const lastSKU = this.state.products && this.state.products.length || 0;
+        
                 return (
                     <Modal title={intl.formatMessage({id: 'newProductModalTitle'})}
                            onCloseClick={this.handleNewProductCloseClick}>
                        <AdminProductsAddForm
+                           lastSKU={lastSKU}
                            loading={this.state.addProduct.loading}
                            error={(this.state.addProduct.error && this.state.addProduct.error.validation) ? this.state.addProduct.error.validation.details : null}
                            onCancelClick={this.handleNewProductCloseClick}

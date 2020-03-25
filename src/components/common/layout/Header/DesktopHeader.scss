@@ -1,6 +1,7 @@
 @import '../../../../styles/variables.scss';
 
 .desktop-header {
+    background-color: $homepage_header_background_color;
     display: flex;
     justify-content: center;
     border-bottom: solid 1px #eeeeee;
@@ -45,22 +46,8 @@
 }
 
 /*
- * Logo & Buttons
+ * Buttons
  */
-
-.desktop-header__logo {
-    img {
-        width: 58px;
-        height: 52px;
-        background: url('../../../../../static/logo.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-}
-
-.desktop-header__logo-link {
-    align-self: center;
-}
 
 .desktop-header__button {
     width: 30px;

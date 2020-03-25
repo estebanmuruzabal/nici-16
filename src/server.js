@@ -50,7 +50,6 @@ import uk from 'react-intl/locale-data/uk';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
 import es from 'react-intl/locale-data/es';
-console.log(es);
 
 addLocaleData([ ...es, ...uk, ...en, ...ru]);
 

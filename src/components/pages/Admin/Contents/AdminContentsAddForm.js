@@ -94,7 +94,8 @@ class AdminContentsAddForm extends React.Component {
         const { availableLocales } = this.state;
         const contentTypeOptions = [
             {name: intl.formatMessage({id: 'article'}), value: 'article'},
-            {name: intl.formatMessage({id: 'banner'}), value: 'banner'}
+            {name: intl.formatMessage({id: 'banner'}), value: 'banner'},
+            {name: intl.formatMessage({id: 'headerDesktopLogo'}), value: 'headerDesktopLogo'}
         ];
 
         const fieldError = (field) => {
@@ -113,9 +114,9 @@ class AdminContentsAddForm extends React.Component {
                             onChange={this.handleTypeChange}
                             error={fieldError('type')} />
                 </div>
-                {   availableLocales.map((locale) => {
+                {   availableLocales.map((locale, idx) => {
                     return (
-                        <div className="admin-contents-add-form__item">
+                        <div key={idx} className="admin-contents-add-form__item">
                             <InputField label={intl.formatMessage({id: 'name'}) + `(${locale.toUpperCase()})`}   
                                         onChange={this.handleNameChange.bind(null, `${locale}`)}
                                         error={fieldError(`name.${locale}`)} />

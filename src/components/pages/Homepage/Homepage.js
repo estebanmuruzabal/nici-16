@@ -57,7 +57,7 @@ class Homepage extends React.Component {
         featuredCategories: this.context.getStore(CollectionsStore).getCollections(['category', 'homepage']),
         featuredCollections: this.context.getStore(CollectionsStore).getCollections(['collection', 'homepage']),
         featuredProducts: this.context.getStore(ProductsHomepageStore).getProducts(),
-        hideCTA: true,
+        hideCTA: false,
     };
 
     //*** Component Lifecycle ***//
@@ -137,17 +137,6 @@ class Homepage extends React.Component {
             <div className="homepage">
                 {!this.state.hideCTA ?
                     <div className="homepage__cta">
-                        <div className="homepage__featured">
-                            <div className="homepage__featured-block">
-                                <HomepageFeaturedCollection feature={featuredCollections[0]} />
-                                <HomepageFeaturedCollection feature={featuredCollections[1]} />
-                            </div>
-                            <div className="homepage__featured-block">
-                                <HomepageFeaturedCollection feature={featuredCollections[2]} />
-                                <HomepageFeaturedCollection feature={featuredCollections[3]} />
-                            </div>
-                        </div>
-
                         <div className="homepage__banners">
                             <Carousel images={this.state.banners.filter(function (banner) {
                                 return banner.body && banner.body.image;
