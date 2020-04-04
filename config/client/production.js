@@ -16,7 +16,7 @@ module.exports = {
     },
     api: {
         atlas: {
-            baseUrl: 'https://nicistore.com/api/v1'
+            baseUrl: 'http://localhost:8000/v1'
         }
     },
     googleAnalytics: {

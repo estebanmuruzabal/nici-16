@@ -9,7 +9,7 @@ let autoprefixer = require('autoprefixer');
  * Settings
  */
 const host = process.env.HOST || '127.0.0.1';
-const port = (process.env.PORT + 1) || 3031;
+const port = (process.env.PORT + 1) || 3001;
 const dist = path.resolve(__dirname, '../static/dist');
 
 /**

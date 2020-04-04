@@ -54,6 +54,8 @@ class AdminContentsBanner extends React.Component {
     //*** Template ***//
 
     render() {
+        console.log('hereeee',this.props);
+        
         return (
             <div className="admin-contents-banner">
                 <div className="admin-contents-banner__form-item">
@@ -69,7 +71,7 @@ class AdminContentsBanner extends React.Component {
                     </div>
                     {this.props.body.image && this.props.body.image.url ?
                         <div className="admin-contents-banner__image-placeholder">
-                            <img src={`//${this.props.body.image.url}`} />
+                            <img src={`http://${this.props.body.image.url}`} />
                             <div className="admin-contents-banner__placeholder-overlay">
                                 <div>
                                     <Button type="primary" onClick={this.handleRemoveImageClick}>

@@ -160,7 +160,8 @@ class AdminContentsEdit extends React.Component {
         //
         let intl = this.context.intl;
         let locale = intl.locale;
-
+        console.log('lalala');
+        
         // Stuff that won't work if we are in "404 Not Found", thus, no content object
         if (this.state.content) {
 
