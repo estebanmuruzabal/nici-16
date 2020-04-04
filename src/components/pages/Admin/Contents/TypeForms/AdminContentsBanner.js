@@ -54,7 +54,8 @@ class AdminContentsBanner extends React.Component {
     //*** Template ***//
 
     render() {
-        return (
+console.log(this.props);
+	    return (
             <div className="admin-contents-banner">
                 <div className="admin-contents-banner__form-item">
                     <InputField label={this.context.intl.formatMessage({id: 'link'})}
