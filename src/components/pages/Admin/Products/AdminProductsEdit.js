@@ -16,9 +16,7 @@ import fetchProductAndCheckIfFound from '../../../../actions/Products/fetchProdu
 import updateProduct from '../../../../actions/Admin/updateProduct';
 
 // Delete
-import DeleteHandler from '../../../common/deleteHandler/DeleteHandler';
 import deleteProduct from '../../../../actions/Admin/deleteProduct';
-import Modal from '../../../common/modals/Modal';
 
 // Required components
 import Button from '../../../common/buttons/Button';
