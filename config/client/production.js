@@ -17,7 +17,6 @@ module.exports = {
     api: {
         atlas: {
 		baseUrl: 'http://ec2-18-228-42-125.sa-east-1.compute.amazonaws.com/v1'
-          //  baseUrl: 'https://nicistore.com//v1'
         }
     },
     googleAnalytics: {

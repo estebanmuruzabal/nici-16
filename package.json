@@ -9,8 +9,13 @@
   },
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
   "build": "rm -rf static/dist && rm -rf static/server && webpack --max_old_space_size=4096 --progress --display-optimization-bailout --config ./webpack/prod.config.js && NODE_ENV=production webpack --disable-host-check --max_old_space_size=4096 --progress --config ./webpack/prod.server.config.js",  
   "dev": "NODE_ENV=development DEBUG=simple-store babel-node index",
+=======
+    "build": "rm -rf static/dist && rm -rf static/server && webpack --max_old_space_size=4096 --progress --display-optimization-bailout --config ./webpack/prod.config.js && NODE_ENV=production webpack --disable-host-check --max_old_space_size=4096 --progress --config ./webpack/prod.server.config.js",
+    "dev": "NODE_ENV=development DEBUG=simple-store babel-node index",
+>>>>>>> 341b87f57ae27814392177664efe38979b15216d
     "prod": "NODE_ENV=production DEBUG=simple-store node ./static/server/server.js"
   },
   "author": "André Tavares",

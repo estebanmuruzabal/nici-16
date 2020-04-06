@@ -54,8 +54,14 @@ class AdminContentsBanner extends React.Component {
     //*** Template ***//
 
     render() {
+<<<<<<< HEAD
 console.log(this.props);
 	    return (
+=======
+        console.log('hereeee',this.props);
+        
+        return (
+>>>>>>> 341b87f57ae27814392177664efe38979b15216d
             <div className="admin-contents-banner">
                 <div className="admin-contents-banner__form-item">
                     <InputField label={this.context.intl.formatMessage({id: 'link'})}
@@ -70,7 +76,7 @@ console.log(this.props);
                     </div>
                     {this.props.body.image && this.props.body.image.url ?
                         <div className="admin-contents-banner__image-placeholder">
-                            <img src={`//${this.props.body.image.url}`} />
+                            <img src={`http://${this.props.body.image.url}`} />
                             <div className="admin-contents-banner__placeholder-overlay">
                                 <div>
                                     <Button type="primary" onClick={this.handleRemoveImageClick}>

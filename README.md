@@ -30,7 +30,7 @@ Then, adding that spanking new feature, use-case or special page template will b
 - [Mailgun](https://mailgun.com) for transactional emails
 
 ## Requirements
-- Node.js + NPM (v10.13.0)
+- Node.js + NPM (v10.13.0 or v8.17.0)
 - [Atlas E-Commerce Backend API](https://github.com/yoonic/atlas) (optional)
 
 ## Installation
