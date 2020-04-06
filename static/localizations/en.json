@@ -205,6 +205,8 @@
     "resetSuccessModalTitle": "Reset Requested",
     "retailPrice": "Retail Price",
     "saveButton": "Save",
+    "deleteProduct": "Delete",
+    "deleteProductModalTitle": "Confirm the deletion?",
     "savedAddresses": "Choose one of your saved addresses",
     "sections": "Featured in Sections",
     "sectionsHeading": "Sections",

@@ -12,6 +12,11 @@ export default keymirror({
     PRODUCTS_FIND_SUCCESS: null,
     PRODUCTS_FIND_ERROR: null,
 
+    // Delete item
+    PRODUCTS_ITEM_DELETE: null,
+    PRODUCTS_ITEM_DELETE_SUCCESS: null,
+    PRODUCTS_ITEM_DELETE_ERROR: null,
+
     // Products featured in homepage
     PRODUCTS_HOMEPAGE: null,
     PRODUCTS_HOMEPAGE_SUCCESS: null,

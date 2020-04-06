@@ -9,6 +9,12 @@
     &:not(:first-child) {
         margin-left: 20px;
     }
+    @media only screen and (max-width: 400px) {
+        &:not(:first-child) {
+            margin-left: 0px;
+        }
+        float: none;
+    }
 }
 
 .direction-button__move-button {

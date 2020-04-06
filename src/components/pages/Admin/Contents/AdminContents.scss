@@ -22,6 +22,17 @@
 
 .admin-contents__add-button {
     width: 130px;
+    @media only screen and (max-width: 400px) {
+        width: 90px;
+    }
+}
+
+.admin-contents__mobile-item-container {
+    display: none;
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        padding-right: 10px;
+    }
 }
 
 /*
@@ -42,7 +53,20 @@
     margin-top: 30px;
 }
 
+.admin-contents__status-container {
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 .admin-contents__link {
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
     & > a {
         color: $color-primary;
         text-decoration: none;
@@ -55,6 +79,10 @@
 
 .admin-contents__labels {
     display: flex;
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .admin-contents__tag {

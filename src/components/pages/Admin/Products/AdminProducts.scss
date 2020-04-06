@@ -6,6 +6,9 @@
 
 .admin-products__header {
     display: flex;
+    @media only screen and (max-width: 400px) {
+        flex-direction: column;
+    }
 }
 
 .admin-products__title {
@@ -46,6 +49,21 @@
     margin-top: 30px;
 }
 
+.admin-products__mobile-item-container {
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.admin-products__mobile-title {
+    display: none;
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        padding-right: 10px;
+    }
+}
 .admin-products__link {
     & > a {
         color: $color-primary;

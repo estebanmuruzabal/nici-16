@@ -1,5 +1,11 @@
 .admin-main-navigation {
     display: flex;
+
+    @media only screen and (max-width: 400px) {
+        flex-direction: column;
+        display: flex;
+        text-align: left;
+    }
 }
 
 .admin-main-navigation__collections {
@@ -12,4 +18,8 @@
     justify-content: flex-end;
     align-self: center;
     margin-left: 20px;
+    @media only screen and (max-width: 400px) {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
 }

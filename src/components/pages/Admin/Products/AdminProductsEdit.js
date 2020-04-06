@@ -15,6 +15,11 @@ import ProductDetailsStore from '../../../../stores/Products/ProductDetailsStore
 import fetchProductAndCheckIfFound from '../../../../actions/Products/fetchProductAndCheckIfFound';
 import updateProduct from '../../../../actions/Admin/updateProduct';
 
+// Delete
+import DeleteHandler from '../../../common/deleteHandler/DeleteHandler';
+import deleteProduct from '../../../../actions/Admin/deleteProduct';
+import Modal from '../../../common/modals/Modal';
+
 // Required components
 import Button from '../../../common/buttons/Button';
 import Checkbox from '../../../common/forms/Checkbox';
@@ -49,7 +54,7 @@ class AdminProductsEdit extends React.Component {
         availableLocales: this.context.getStore(IntlStore).getAvailableLocales(),
         categories: this.context.getStore(CollectionsStore).getCollections(['category']),
         collections: this.context.getStore(CollectionsStore).getCollections(['collection']),
-        fieldErrors: {}
+        fieldErrors: {},
     };
 
     //*** Component Lifecycle ***//
@@ -96,6 +101,14 @@ class AdminProductsEdit extends React.Component {
             fieldErrors: fieldErrors
         });
     }
+
+    handleDeleteProductClick = () => {
+        let product = this.state.product;
+        this.context.executeAction(deleteProduct, product.id);
+        let intl = this.context.intl;
+        let locale = intl.locale;
+        this.props.history.push(`/${locale}/adm/products`);
+    };
 
     //*** View Controllers ***//
 
@@ -288,6 +301,11 @@ class AdminProductsEdit extends React.Component {
                             <div className="admin-products-edit__toolbar-item">
                                 <Button type="primary" onClick={this.handleSaveClick} disabled={this.state.loading}>
                                     <FormattedMessage id="saveButton" />
+                                </Button>
+                            </div>
+                            <div className="admin-products-edit__toolbar-item">
+                                <Button type="primary" onClick={this.handleDeleteProductClick} disabled={this.state.loading}>
+                                    <FormattedMessage id="deleteProduct" />
                                 </Button>
                             </div>
                         </div>

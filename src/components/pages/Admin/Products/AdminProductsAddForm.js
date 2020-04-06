@@ -43,7 +43,7 @@ class AdminProductsAddForm extends React.Component {
             name[locale] = '';
         });
         
-        this.setState({name, sku: this.props.lastSKU.toString()});
+        this.setState({name, sku: Number(this.props.lastSKU) + 1});
         // Component styles
         require('./AdminProductsAddForm.scss');
     }
@@ -78,7 +78,7 @@ class AdminProductsAddForm extends React.Component {
 
         if (Object.keys(fieldErrors).length === 0) {
             this.props.onSubmitClick({
-                sku: this.state.sku,
+                sku: this.state.sku.toString(),
                 name: this.state.name
             });
         }

@@ -175,16 +175,56 @@ class AdminProducts extends React.Component {
             return {
                 highlight: (product.enabled === true && product.images.length == 0) ? 'warning' : null,
                 data: [
-                    <Text size="medium">{product.sku}</Text>,
+                    <div className="admin-products__mobile-item-container">
+                        <div className="admin-products__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="skuHeading" />
+                            </Text>
+                        </div>
+                        <Text size="medium">{product.sku}</Text>
+                    </div>,
                     <span className="admin-products__link">
+                        <div className="admin-products__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="nameHeading" />
+                            </Text>
+                        </div>
                         <Link to={`/${locale}/adm/products/${product.id}`} >
                             {product.name[locale]}
                         </Link>
                     </span>,
-                    <StatusIndicator status={(product.stock > 0) ? 'default' : 'error'} />,
-                    <StatusIndicator status={(product.images.length > 0) ? 'default' : 'error'} />,
-                    <Text size="medium">{getProductSections(product)}</Text>,
-                    <StatusIndicator status={(product.enabled === true) ? 'success' : 'default'} />
+                    <div className="admin-products__mobile-item-container">
+                        <div className="admin-products__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="stockHeading" />
+                            </Text>
+                        </div>
+                        <StatusIndicator status={(product.stock > 0) ? 'default' : 'error'} />
+                    </div>,
+                    <div className="admin-products__mobile-item-container">
+                        <div className="admin-products__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="imagesHeading" />
+                            </Text>
+                        </div>
+                        <StatusIndicator status={(product.images.length > 0) ? 'default' : 'error'} />
+                    </div>,
+                    <div>
+                        <div className="admin-products__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="sectionsHeading" />
+                            </Text>
+                        </div>
+                        <Text size="medium">{getProductSections(product)}</Text>
+                    </div>,
+                    <div className="admin-products__mobile-item-container">
+                        <div className="admin-products__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="enabledHeading" />
+                            </Text>
+                        </div>
+                        <StatusIndicator status={(product.enabled === true) ? 'success' : 'default'} />
+                    </div>,
                 ]
             };
         });

@@ -110,11 +110,21 @@ class AdminCollections extends React.Component {
             return {
                 data: [
                     <span className="admin-collections__link">
+                        <div className="admin-collections__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="collectionNameHeading" />
+                            </Text>
+                        </div>
                         <Link to={`/${locale}/adm/collections/${collection.id}`}>
                             {collection.name[locale]}
                         </Link>
                     </span>,
                     <Text size="medium">
+                        <div className="admin-collections__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="collectionParentHeading" />
+                            </Text>
+                        </div>
                         {collection.parentId ?
                             <span>
                                 {this.context.getStore(CollectionsStore).getCollection(collection.parentId).name[locale]}
@@ -124,6 +134,11 @@ class AdminCollections extends React.Component {
                         }
                     </Text>,
                     <Text size="medium">
+                        <div className="admin-collections__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="tagsHeading" />
+                            </Text>
+                        </div>
                         <div className="admin-collections__labels">
                             {collection.tags.map(function (section, idx) {
                                 return (
@@ -136,7 +151,14 @@ class AdminCollections extends React.Component {
                             })}
                         </div>
                     </Text>,
-                    <StatusIndicator status={(collection.enabled === true) ? 'success' : 'default'} />
+                    <div className="admin-collections__status">
+                        <div className="admin-collections__mobile-title">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="enabledHeading" />
+                            </Text>
+                        </div>
+                        <StatusIndicator status={(collection.enabled === true) ? 'success' : 'default'} />
+                    </div>
                 ]
             };
         });

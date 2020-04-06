@@ -2,7 +2,7 @@
   // img {
   //     width: 58px;
   //     height: 52px;
-  //     background: url('../../../../../static/logo.png');
+  //     // background: url('../../../../../static/logo.png');
   //     background-size: 100%;
   //     background-repeat: no-repeat;
   // }
@@ -13,4 +13,11 @@
 
 .desktop-header__logo-link {
   align-self: center;
+
+  img {
+    width: 58px;
+    height: 58px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 }

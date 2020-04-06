@@ -212,6 +212,8 @@
     "resetSuccessModalTitle": "Пароль сброшен",
     "retailPrice": "Розничная цена",
     "saveButton": "Сохранить",
+    "deleteProduct": "Eliminar",
+    "deleteProductModalTitle": "Confirma la eliminacion?",
     "savedAddresses": "Выберите один из сохраненных адресов",
     "sections": "Показывать в секциях",
     "sectionsHeading": "Секции",

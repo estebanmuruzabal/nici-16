@@ -3,6 +3,16 @@
 .main-navigation {
     width: 100%;
     font-family: $font-family-heading;
+
+    nav {
+        ul {
+            @media only screen and (max-width: 400px) {
+                flex-direction: column;
+                display: flex;
+                text-align: left;
+            }
+        }
+    }
 }
 
 .main-navigation__item {

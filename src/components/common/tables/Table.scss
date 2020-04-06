@@ -4,11 +4,22 @@
     width: 100%;
     border: 1px solid #eeeeee;
     text-align: left;
+    @media only screen and (max-width: 400px) {
+        thead {
+            display: none;
+        }
+    }
 }
 
 .table__row {
     height: 50px;
     border-bottom: 1px solid #eeeeee;
+
+    @media only screen and (max-width: 400px) {
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+    }
 
     &--info {
         background-color: $background-color-table-info;
@@ -31,6 +42,9 @@
 .table__data {
     padding: 0 15px 0 15px;
     vertical-align: middle;
+    @media only screen and (max-width: 400px) {
+        padding: 5px;
+    }
 }
 
 .table__body > .table__row {

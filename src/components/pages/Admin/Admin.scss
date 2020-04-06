@@ -16,10 +16,16 @@
     padding: 20px 30px 20px 30px;
     border-bottom: 3px solid $color-primary;
     background-color: $color-secondary;
+    @media only screen and (max-width: 400px) {
+        flex-direction: column;
+    }
 }
 
 .admin-title {
     align-self: center;
+    @media only screen and (max-width: 400px) {
+        display: none;
+    }
 }
 
 .admin-nav {

@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 // Flux
 import AccountStore from '../../../stores/Account/AccountStore';
 import triggerDrawer from '../../../actions/Application/triggerDrawer';
+import IntlStore from '../../../stores/Application/IntlStore';
 
 // Required Components
 import Text from '../typography/Text';
@@ -52,6 +53,9 @@ class SideMenu extends React.Component {
     //*** Template ***//
 
     render() {
+        const locale = this.context.getStore(IntlStore).getCurrentLocale();
+        const routeParams = {locale: locale};
+        const isAdmin = this.context.getStore(AccountStore).isAuthorized(['admin']);
         return (
             <div className="side-menu">
                 <nav>
@@ -90,6 +94,19 @@ class SideMenu extends React.Component {
                                         </Text>
                                     </div>
                                 </Link>
+                            </li>
+                            <li className="side-menu__item side-menu__account-item" onClick={this.handleItemClick}>
+                                { isAdmin ?
+                                    <div className="desktop-header__logout-button">
+                                        <Link to={`/${this.context.intl.locale}/adm`} params={routeParams}>
+                                            <Text size="small" weight="bold" color="white">
+                                                <FormattedMessage id="adminPanel" />
+                                            </Text>
+                                        </Link>
+                                    </div>
+                                    :
+                                    null
+                                }
                             </li>
                             <li className="side-menu__item side-menu__account-item" onClick={this.handleItemClick}>
                                 <Link to={`/${this.context.intl.locale}/logout`} >

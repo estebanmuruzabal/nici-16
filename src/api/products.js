@@ -56,6 +56,16 @@ class ProductsAPI {
     }
 
     /**
+     * Delete Product
+     */
+    delete(productId) {
+        return new Promise((resolve, reject) => {
+            let request = superagent.delete(`${this.baseUrl}/products/${productId}`);
+            this._wrapAndRequest(request, resolve, reject);
+        });
+    }
+
+    /**
      * Fetch Product with given ID
      */
     get(productId) {

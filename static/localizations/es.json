@@ -205,6 +205,8 @@
   "resetSuccessModalTitle": "Pedido confirmado",
   "retailPrice": "Precio al por menor",
   "saveButton": "Guardar",
+  "deleteProduct": "Eliminar",
+  "deleteProductModalTitle": "Confirma la eliminacion?",
   "savedAddresses": "Elegí una de las direcciones guardadas",
   "sections": "Secciones Destacadas",
   "sectionsHeading": "Secciones",

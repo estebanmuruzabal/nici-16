@@ -11,6 +11,10 @@
 .admin-homepage-settings__ordering {
     display: flex;
     margin-top: 7.5px;
+
+    @media only screen and (max-width: 400px) {
+        flex-direction: column;
+    }
 }
 
 .admin-homepage-settings__ordering-items {
@@ -20,4 +24,8 @@
 .admin-homepage-settings__ordering-actions {
     align-self: center;
     margin-left: 20px;
+    @media only screen and (max-width: 400px) {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
 }

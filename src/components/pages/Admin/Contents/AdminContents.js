@@ -122,23 +122,40 @@ class AdminContents extends React.Component {
         let rows = this.state.contents.map(function (content) {
             return {
                 data: [
-                    <Text size="medium">
-                        {content.type ?
-                            <Label>
-                                <FormattedMessage id={content.type} />
-                            </Label>
-                            :
-                            <Label type="error">
-                                <FormattedMessage id="noType" />
-                            </Label>
-                        }
-                    </Text>,
+                    <div>
+                        <div className="admin-contents__mobile-item-container">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="typeHeading" />
+                            </Text>
+                        </div>
+                        <Text size="medium">
+                            {content.type ?
+                                <Label>
+                                    <FormattedMessage id={content.type} />
+                                </Label>
+                                :
+                                <Label type="error">
+                                    <FormattedMessage id="noType" />
+                                </Label>
+                            }
+                        </Text>
+                    </div>,
                     <span className="admin-contents__link">
+                        <div className="admin-contents__mobile-item-container">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="nameHeading" />
+                            </Text>
+                        </div>
                         <Link to={`/${locale}/adm/contents/${content.id}`} >
                             {content.name[locale]}
                         </Link>
                     </span>,
                     <div className="admin-contents__labels">
+                        <div className="admin-contents__mobile-item-container">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="tagsHeading" />
+                            </Text>
+                        </div>
                         {content.tags.map(function (tag, idx) {
                             return (
                                 <div key={idx} className="admin-contents__tag">
@@ -149,7 +166,14 @@ class AdminContents extends React.Component {
                             );
                         })}
                     </div>,
-                    <StatusIndicator status={(content.enabled === true) ? 'success' : 'default'} />
+                    <div className="admin-contents__status-container">
+                        <div className="admin-contents__mobile-item-container">
+                            <Text size="medium" weight="bold">
+                                <FormattedMessage id="enabledHeading" />
+                            </Text>
+                        </div>
+                        <StatusIndicator status={(content.enabled === true) ? 'success' : 'default'} />
+                    </div>,
                 ]
             };
         });

@@ -22,6 +22,10 @@
 
 .admin-collections__add-button {
     width: 130px;
+
+    @media only screen and (max-width: 400px) {
+        width: 90px;
+    }
 }
 
 /*
@@ -33,22 +37,49 @@
 }
 
 .admin-collections__link {
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: row;
+    }
     & > a {
         color: $color-primary;
         text-decoration: none;
-
         &:hover {
             text-decoration: underline;
         }
     }
 }
 
+.admin-collections__status {
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 .admin-collections__labels {
     display: flex;
+    @media only screen and (max-width: 400px) {
+        flex-direction: column;
+    }
+}
+
+.admin-collections__mobile-title {
+    display: none;
+    @media only screen and (max-width: 400px) {
+        display: flex;
+        padding-right: 10px;
+    }
 }
 
 .admin-collections__label {
     &:not(:first-child) {
         margin-left: 5px;
+    }
+    @media only screen and (max-width: 400px) {
+        &:not(:first-child) {
+            margin-left: 0px;
+        }
+        padding: 5px;
     }
 }
