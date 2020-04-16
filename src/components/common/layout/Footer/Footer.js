@@ -5,7 +5,8 @@ import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import config from '../../../../config';
+                
 // Required Components
 import Heading from '../../typography/Heading';
 import NewsletterSubscription from '../../forms/NewsletterSubscription';
@@ -54,7 +55,7 @@ class Footer extends React.Component {
         //
         // Return
         //
-
+        const { instagramLink, facebookLink } = config.app;
         return (
             <div className="footer">
                 <div className="footer__container">
@@ -84,7 +85,7 @@ class Footer extends React.Component {
                                     <li className="footer__social-item">
                                         <div className="footer__social-icon footer__facebook-icon"></div>
                                         <div>
-                                            <a className="footer__link footer__social-link" href="//facebook.com" target="_blank">
+                                            <a className="footer__link footer__social-link" href={facebookLink} target="_blank">
                                                 <Text size="small">Facebook</Text>
                                             </a>
                                         </div>
@@ -92,7 +93,7 @@ class Footer extends React.Component {
                                     <li className="footer__social-item">
                                         <div className="footer__social-icon footer__instagram-icon"></div>
                                         <div>
-                                            <a className="footer__link footer__social-link" href="//instagram.com" target="_blank">
+                                            <a className="footer__link footer__social-link" href={instagramLink} target="_blank">
                                                 <Text size="small">Instagram</Text>
                                             </a>
                                         </div>

@@ -2,12 +2,15 @@
 // Do not require this directly. Use ./src/config instead.
 module.exports = {
     app: {
-        brand: 'Simple Store',
+        brand: 'Ringo Motos',
+        facebookLink: 'https://m.facebook.com/ringomotosRA',
+        instagramLink: 'https://www.instagram.com/ringo_motos_ra', 
+        email: 'Ringo_moto_ra@hotmail.com',
         title: {
-            uk: 'Simple Store',
-            ru: 'Simple Store',
-            en: 'Simple Store',
-            es: 'Simple Store',
+            uk: 'Ringo Motos',
+            ru: 'Ringo Motos',
+            en: 'Ringo Motos',
+            es: 'Ringo Motos',
         },
         locale: {
             available: ['es'],
@@ -18,7 +21,6 @@ module.exports = {
     api: {
         atlas: {
             baseUrl: 'http://localhost:8000/v1'
-            // baseUrl: 'http://nicistore.com/api/v1'
         }
     },
     googleAnalytics: {

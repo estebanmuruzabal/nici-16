@@ -2,12 +2,12 @@
 // Do not require this directly. Use ./src/config instead.
 module.exports = {
     app: {
-        brand: 'Simple Store',
+        brand: 'Ringo Motos',
         title: {
-            uk: 'Simple Store',
-            ru: 'Simple Store',
-            en: 'Simple Store',
-            es: 'Simple Store',
+            uk: 'Ringo Motos',
+            ru: 'Ringo Motos',
+            en: 'Ringo Motos',
+            es: 'Ringo Motos',
         },
         locale: {
             available: ['es'],
@@ -16,7 +16,7 @@ module.exports = {
     },
     api: {
         atlas: {
-		baseUrl: 'http://ec2-18-228-42-125.sa-east-1.compute.amazonaws.com/v1'
+		    baseUrl: 'http://ec2-18-228-42-125.sa-east-1.compute.amazonaws.com/v1'
         }
     },
     googleAnalytics: {
